@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -24,25 +24,24 @@ public class Info_komunalni {
 	private long id_upravitelj;
 	
 	@Column
-	private integer id_zgrada;
+	private long id_zgrada;
 	
 	@Column
-	private integer id_majstor;
+	private long id_majstor;
 	
 	@Column
-	private integer vrsta;
+	private long vrsta;
 	
 	@Column
-	private integer status;
+	private long status;
 
 	@Column
-	private integer vrsta_majstora;
+	private long vrsta_majstora;
 	
 	
-	@Column
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-	private Date datum;
+	@Column(nullable = false)
+    @NotEmpty
+	private LocalDateTime datum;
 	
 	@Column(nullable = false)
     @NotEmpty
@@ -68,51 +67,51 @@ public class Info_komunalni {
 		this.id_upravitelj = id_upravitelj;
 	}
 
-	public integer getId_zgrada() {
+	public long getId_zgrada() {
 		return id_zgrada;
 	}
 
-	public void setId_zgrada(integer id_zgrada) {
+	public void setId_zgrada(long id_zgrada) {
 		this.id_zgrada = id_zgrada;
 	}
 
-	public integer getId_majstor() {
+	public long getId_majstor() {
 		return id_majstor;
 	}
 
-	public void setId_majstor(integer id_majstor) {
+	public void setId_majstor(long id_majstor) {
 		this.id_majstor = id_majstor;
 	}
 
-	public integer getVrsta() {
+	public long getVrsta() {
 		return vrsta;
 	}
 
-	public void setVrsta(integer vrsta) {
+	public void setVrsta(long vrsta) {
 		this.vrsta = vrsta;
 	}
 
-	public integer getStatus() {
+	public long getStatus() {
 		return status;
 	}
 
-	public void setStatus(integer status) {
+	public void setStatus(long status) {
 		this.status = status;
 	}
 
-	public integer getVrsta_majstora() {
+	public long getVrsta_majstora() {
 		return vrsta_majstora;
 	}
 
-	public void setVrsta_majstora(integer vrsta_majstora) {
+	public void setVrsta_majstora(long vrsta_majstora) {
 		this.vrsta_majstora = vrsta_majstora;
 	}
 
-	public Date getDatum() {
+	public LocalDateTime getDatum() {
 		return datum;
 	}
 
-	public void setDatum(Date datum) {
+	public void setDatum(LocalDateTime datum) {
 		this.datum = datum;
 	}
 

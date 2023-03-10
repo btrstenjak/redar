@@ -20,21 +20,20 @@ public class Info {
 	private long id_info;
 	
 	@Column
-	private integer id_upravitelj;
+	private long id_upravitelj;
 	
 	@Column
-	private integer vrsta;
+	private long vrsta;
 	
 	@Column
-	private integer status;
+	private long status;
 	
 	@Column
 	private long id_korisnik;
 	
-	@Column
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-	private Date datum;
+	@Column(nullable = false)
+    @NotEmpty
+	private LocalDateTime datum;
 	
 	
 	@Column(nullable = false)
@@ -57,23 +56,23 @@ public class Info {
 		return id_upravitelj;
 	}
 
-	public void setId_upravitelj(integer id_upravitelj) {
+	public void setId_upravitelj(long id_upravitelj) {
 		this.id_upravitelj = id_upravitelj;
 	}
 
-	public integer getVrsta() {
+	public long getVrsta() {
 		return vrsta;
 	}
 
-	public void setVrsta(integer vrsta) {
+	public void setVrsta(long vrsta) {
 		this.vrsta = vrsta;
 	}
 
-	public integer getStatus() {
+	public long getStatus() {
 		return status;
 	}
 
-	public void setStatus(integer status) {
+	public void setStatus(long status) {
 		this.status = status;
 	}
 
@@ -85,11 +84,11 @@ public class Info {
 		this.id_korisnik = id_korisnik;
 	}
 
-	public Date getDatum() {
+	public LocalDateTime getDatum() {
 		return datum;
 	}
 
-	public void setDatum(Date datum) {
+	public void setDatum(LocalDateTime datum) {
 		this.datum = datum;
 	}
 

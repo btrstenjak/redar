@@ -22,17 +22,17 @@ public class Grad_lokacija {
 	private  String naziv;
 	
 	@Column
-	private double latitude;
+	private long latitude;
 	
 	@Column
-	private double longitude;
+	private long longitude;
 	
 	@Column(nullable = false)
     @NotEmpty
 	private  String email;
 	
 	@Column
-	private integer kvota;
+	private long kvota;
 
 	public long getId_grad() {
 		return id_grad;
@@ -50,19 +50,19 @@ public class Grad_lokacija {
 		this.naziv = naziv;
 	}
 
-	public double getLatitude() {
+	public long getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(double latitude) {
+	public void setLatitude(long latitude) {
 		this.latitude = latitude;
 	}
 
-	public double getLongitude() {
+	public long getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(double longitude) {
+	public void setLongitude(long longitude) {
 		this.longitude = longitude;
 	}
 
@@ -78,7 +78,7 @@ public class Grad_lokacija {
 		return kvota;
 	}
 
-	public void setKvota(integer kvota) {
+	public void setKvota(long kvota) {
 		this.kvota = kvota;
 	}
 
