@@ -2,11 +2,13 @@ package hr.hrcity.eredar.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 
@@ -67,4 +69,6 @@ public class Arhiva {
 
          return naziv.equals(((Crna_lista)ob).getDatum()) ;     
 
+}
+	
 }

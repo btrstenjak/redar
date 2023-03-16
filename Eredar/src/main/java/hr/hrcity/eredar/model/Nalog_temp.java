@@ -18,7 +18,7 @@ public class Nalog_temp {
 	private long id_predlozak;
 	
 	@Column
-	private Intiger id_upravitelj;
+	private Integer id_upravitelj;
 	
 	@Column(nullable = false)
     @NotEmpty
@@ -60,11 +60,11 @@ public class Nalog_temp {
 		this.id_predlozak = id_predlozak;
 	}
 
-	public Intiger getId_upravitelj() {
+	public Integer getId_upravitelj() {
 		return id_upravitelj;
 	}
 
-	public void setId_upravitelj(Intiger id_upravitelj) {
+	public void setId_upravitelj(Integer id_upravitelj) {
 		this.id_upravitelj = id_upravitelj;
 	}
 

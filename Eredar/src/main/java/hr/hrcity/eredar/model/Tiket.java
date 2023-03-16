@@ -6,9 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDateTime;
+import java.util.Date;
 @Entity
 @Table(name = "tiket")
 public class Tiket {
@@ -23,16 +28,16 @@ public class Tiket {
 	
 	
 	@Column
-	private Intiger id_upravitelj;
+	private Integer id_upravitelj;
 	
 	@Column
 	private long id_korisnik;
 	
 	@Column
-	private Intiger vrsta;
+	private Integer vrsta;
 	
 	@Column
-	private Intiger status;
+	private Integer status;
 	
 	
 	@Column(nullable = false)
@@ -75,11 +80,11 @@ public class Tiket {
 		this.id_upit = id_upit;
 	}
 
-	public Intiger getId_upravitelj() {
+	public Integer getId_upravitelj() {
 		return id_upravitelj;
 	}
 
-	public void setId_upravitelj(Intiger id_upravitelj) {
+	public void setId_upravitelj(Integer id_upravitelj) {
 		this.id_upravitelj = id_upravitelj;
 	}
 
@@ -91,19 +96,19 @@ public class Tiket {
 		this.id_korisnik = id_korisnik;
 	}
 
-	public Intiger getVrsta() {
+	public Integer getVrsta() {
 		return vrsta;
 	}
 
-	public void setVrsta(Intiger vrsta) {
+	public void setVrsta(Integer vrsta) {
 		this.vrsta = vrsta;
 	}
 
-	public Intiger getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(Intiger status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 
