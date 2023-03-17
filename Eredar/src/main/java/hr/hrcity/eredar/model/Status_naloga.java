@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
-import java.time.LocalDateTime;
 @Entity
 @Table(name = "status_naloga")
 public class Status_naloga {
