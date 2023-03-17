@@ -13,7 +13,7 @@
 	//be mapped to a database table.
 	@Entity
 
-	///@Table(name = "grad"): This annotation specifies the
+	///@Table(name = "error_log"): This annotation specifies the
 	// name of the database table that this entity maps to.
 	@Table(name = "error_log")
 	public class Error_log {
