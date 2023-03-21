@@ -1,6 +1,7 @@
 package hr.hrcity.eredar.model;
 
 import java.security.Timestamp;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,9 +15,6 @@ import javax.validation.constraints.NotEmpty;
 @Table(name = "arhiva")
 public class Arhiva {
 
-	
-	
-	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +27,9 @@ public class Arhiva {
 	@Column(nullable = false)
     @NotEmpty
 	private String putanja;
+	
+	@Column
+	private LocalDateTime datum;
 
 	public long getId_arhiva() {
 		return id_arhiva;
@@ -54,11 +55,22 @@ public class Arhiva {
 		this.putanja = putanja;
 	}
 
+	
+	
+	public LocalDateTime getDatum() {
+		return datum;
+	}
+
+	public void setDatum(LocalDateTime datum) {
+		this.datum = datum;
+	}
+
 	@Override
 	public String toString() {
-		return "Arhiva [id=" + id_arhiva + ", naziv=" + naziv + ", putanja=" + putanja + "]";
+		return "Arhiva [id_arhiva=" + id_arhiva + ", naziv=" + naziv + ", putanja=" + putanja + ", datum=" + datum
+				+ "]";
 	}
-	
+
 	public boolean equals(Object ob){  
         if(this==ob)          
              return true;  
