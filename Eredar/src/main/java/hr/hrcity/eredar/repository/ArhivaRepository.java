@@ -18,5 +18,4 @@ public interface ArhivaRepository extends JpaRepository<Arhiva,Long> {
 	
 	Collection<Arhiva> findAllEntity();
 
-	//Optional<Arhiva> findById(long id_arhiva);
 }

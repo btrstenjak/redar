@@ -1,6 +1,6 @@
 package hr.hrcity.eredar.service;
 
-import hr.hrcity.eredar.exception.ResourceNotFoundException;
+
 import hr.hrcity.eredar.model.Arhiva;
 
 public interface ArhivaService {
