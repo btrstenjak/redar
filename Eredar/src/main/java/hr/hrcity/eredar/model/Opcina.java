@@ -18,8 +18,9 @@ public class Opcina {
 	private long id_opcina;
 	
 	@Column
-	private int id_upravitelj;
-	
+
+	private long id_upravitelj;
+
 	
 	@Column
 	private String naziv_opcine;
@@ -39,12 +40,12 @@ public class Opcina {
 	}
 
 
-	public int getId_upravitelj() {
+	public long getId_upravitelj() {
 		return id_upravitelj;
 	}
 
 
-	public void setId_upravitelj(int id_upravitelj) {
+	public void setId_upravitelj(long id_upravitelj) {
 		this.id_upravitelj = id_upravitelj;
 	}
 
