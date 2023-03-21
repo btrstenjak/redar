@@ -1,25 +1,19 @@
 package hr.hrcity.eredar.model;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.util.Date;
-
-
 
 @Entity
 @Table(name = "pitanje")
 public class Pitanje {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id_pitanje;
@@ -31,24 +25,25 @@ public class Pitanje {
 	private long id_korisnik;
 	
 	@Column
-	private Integer id_upravitelj;
+	private int id_upravitelj;
 	
 	@Column
-	private Integer id_status_prijave;
+	private int id_status_prijave;
 	
 	@Column
-	private long id_zaposlenika;
+	private int id_zaposlenika;
 	
 	@Column
-	private Integer vidljivost;
+	private int vidljivost;
+	
+
+	@Column(nullable = false)
+    @NotEmpty
+	private String adresa;
 	
 	@Column(nullable = false)
     @NotEmpty
 	private String naziv_grad;
-	
-	@Column(nullable = false)
-    @NotEmpty
-	private String adresa;
 	
 	@Column(nullable = false)
     @NotEmpty
@@ -62,16 +57,11 @@ public class Pitanje {
     @NotEmpty
 	private String odgovor;
 	
+	@Column
+	private LocalDateTime zaprimljena;
 	
 	@Column
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-	private Date zaprimljena;
-	
-	@Column
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-	private Date zavrsena;
+	private LocalDateTime zavrsena;
 
 	public long getId_pitanje() {
 		return id_pitanje;
@@ -97,44 +87,36 @@ public class Pitanje {
 		this.id_korisnik = id_korisnik;
 	}
 
-	public Integer getId_upravitelj() {
+	public int getId_upravitelj() {
 		return id_upravitelj;
 	}
 
-	public void setId_upravitelj(Integer id_upravitelj) {
+	public void setId_upravitelj(int id_upravitelj) {
 		this.id_upravitelj = id_upravitelj;
 	}
 
-	public Integer getId_status_prijave() {
+	public int getId_status_prijave() {
 		return id_status_prijave;
 	}
 
-	public void setId_status_prijave(Integer id_status_prijave) {
+	public void setId_status_prijave(int id_status_prijave) {
 		this.id_status_prijave = id_status_prijave;
 	}
 
-	public long getId_zaposlenika() {
+	public int getId_zaposlenika() {
 		return id_zaposlenika;
 	}
 
-	public void setId_zaposlenika(long id_zaposlenika) {
+	public void setId_zaposlenika(int id_zaposlenika) {
 		this.id_zaposlenika = id_zaposlenika;
 	}
 
-	public Integer getVidljivost() {
+	public int getVidljivost() {
 		return vidljivost;
 	}
 
-	public void setVidljivost(Integer vidljivost) {
+	public void setVidljivost(int vidljivost) {
 		this.vidljivost = vidljivost;
-	}
-
-	public String getNaziv_grad() {
-		return naziv_grad;
-	}
-
-	public void setNaziv_grad(String naziv_grad) {
-		this.naziv_grad = naziv_grad;
 	}
 
 	public String getAdresa() {
@@ -143,6 +125,14 @@ public class Pitanje {
 
 	public void setAdresa(String adresa) {
 		this.adresa = adresa;
+	}
+
+	public String getNaziv_grad() {
+		return naziv_grad;
+	}
+
+	public void setNaziv_grad(String naziv_grad) {
+		this.naziv_grad = naziv_grad;
 	}
 
 	public String getNapomena() {
@@ -169,19 +159,20 @@ public class Pitanje {
 		this.odgovor = odgovor;
 	}
 
-	public Date getZaprimljena() {
+
+	public LocalDateTime getZaprimljena() {
 		return zaprimljena;
 	}
 
-	public void setZaprimljena(Date zaprimljena) {
+	public void setZaprimljena(LocalDateTime zaprimljena) {
 		this.zaprimljena = zaprimljena;
 	}
 
-	public Date getZavrsena() {
+	public LocalDateTime getZavrsena() {
 		return zavrsena;
 	}
 
-	public void setZavrsena(Date zavrsena) {
+	public void setZavrsena(LocalDateTime zavrsena) {
 		this.zavrsena = zavrsena;
 	}
 
@@ -189,9 +180,8 @@ public class Pitanje {
 	public String toString() {
 		return "Pitanje [id_pitanje=" + id_pitanje + ", id_grad=" + id_grad + ", id_korisnik=" + id_korisnik
 				+ ", id_upravitelj=" + id_upravitelj + ", id_status_prijave=" + id_status_prijave + ", id_zaposlenika="
-				+ id_zaposlenika + ", vidljivost=" + vidljivost + ", naziv_grad=" + naziv_grad + ", adresa=" + adresa
-				+ ", napomena=" + napomena + ", naslov=" + naslov + ", odgovor=" + odgovor + ", zaprimljena="
-				+ zaprimljena + ", zavrsena=" + zavrsena + "]";
+				+ id_zaposlenika + ", vidljivost=" + vidljivost + ", adresa=" + adresa + ", naziv_grad=" + naziv_grad
+				+ ", napomena=" + napomena + ", naslov=" + naslov + ", odgovor=" + odgovor + ", zaprimljena=" + zaprimljena + ", zavrsena=" + zavrsena + "]";
 	}
 	
 	public boolean equals(Object ob){  
@@ -202,6 +192,6 @@ public class Pitanje {
          //assume getter method in MyClass and this class has private variable myName, herName  
          return naslov.equals(((Pitanje)ob).getId_pitanje()) ;      
      } 
-	
 }
+
 

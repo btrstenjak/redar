@@ -65,6 +65,7 @@ public class Grad {
 				+ zupanija + "]";
 	}
 	
+	
 	public boolean equals(Object ob){  
         if(this==ob)          
              return true;  

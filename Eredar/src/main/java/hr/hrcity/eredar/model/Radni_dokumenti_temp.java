@@ -1,5 +1,6 @@
 package hr.hrcity.eredar.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,20 +9,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
-import java.time.LocalDateTime;
-
 @Entity
 @Table(name = "radni_dokumenti_temp")
 public class Radni_dokumenti_temp {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id_predlozak;
 	
 	@Column
-	private Integer  id_upravitelj;
+	private int id_upravitelj;
 	
 	@Column
-	private Integer vrsta;
+	private int vrsta;
+
+	
 	@Column(nullable = false)
     @NotEmpty
 	private String obrazlozenje;
@@ -70,19 +72,19 @@ public class Radni_dokumenti_temp {
 		this.id_predlozak = id_predlozak;
 	}
 
-	public Integer getId_upravitelj() {
+	public int getId_upravitelj() {
 		return id_upravitelj;
 	}
 
-	public void setId_upravitelj(Integer id_upravitelj) {
+	public void setId_upravitelj(int id_upravitelj) {
 		this.id_upravitelj = id_upravitelj;
 	}
 
-	public Integer getVrsta() {
+	public int getVrsta() {
 		return vrsta;
 	}
 
-	public void setVrsta(Integer vrsta) {
+	public void setVrsta(int vrsta) {
 		this.vrsta = vrsta;
 	}
 
@@ -173,7 +175,7 @@ public class Radni_dokumenti_temp {
 				+ ", pravoljek=" + pravoljek + ", potpis=" + potpis + ", dostaviti=" + dostaviti + ", klasa=" + klasa
 				+ ", URB=" + URB + ", naziv_predloska=" + naziv_predloska + ", osoba=" + osoba + "]";
 	}
-	
+
 	public boolean equals(Object ob){  
         if(this==ob)          
              return true;  

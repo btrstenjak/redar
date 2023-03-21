@@ -48,9 +48,9 @@ public class Vrste_dokumenata {
 	public boolean equals(Object ob){  
         if(this==ob)          
              return true;  
-        if(!(ob instanceof Vrsta_dokumenta))  
+        if(!(ob instanceof Vrste_dokumenta))  
              return false;  
          //assume getter method in MyClass and this class has private variable myName, herName  
-         return naziv_dokumenta.equals(((Vrsta_dokumenta)ob).getId_vrsta_dokumenta()) ;      
+         return naziv_dokumenta.equals(((Vrste_dokumenta)ob).getId_vrsta_dokumenta()) ;      
      } 
 }

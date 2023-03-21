@@ -1,6 +1,6 @@
 package hr.hrcity.eredar.model;
 
-
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,31 +10,25 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 
-import java.time.LocalDateTime;
-
 @Entity
 @Table(name = "info")
 public class Info {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id_info;
 	
 	@Column
-	private long id_upravitelj;
-	
-	@Column
-	private long vrsta;
-	
-	@Column
-	private long status;
-	
-	@Column
 	private long id_korisnik;
 	
-	@Column(nullable = false)
-    @NotEmpty
-	private LocalDateTime datum;
+	@Column
+	private int vrsta;
 	
+	@Column
+	private int status;
+	
+	@Column
+	private int id_upravitelj;
 	
 	@Column(nullable = false)
     @NotEmpty
@@ -43,6 +37,9 @@ public class Info {
 	@Column(nullable = false)
     @NotEmpty
 	private String poruka;
+	
+	@Column
+	private LocalDateTime datum;
 
 	public long getId_info() {
 		return id_info;
@@ -50,30 +47,6 @@ public class Info {
 
 	public void setId_info(long id_info) {
 		this.id_info = id_info;
-	}
-
-	public long getId_upravitelj() {
-		return id_upravitelj;
-	}
-
-	public void setId_upravitelj(long id_upravitelj) {
-		this.id_upravitelj = id_upravitelj;
-	}
-
-	public long getVrsta() {
-		return vrsta;
-	}
-
-	public void setVrsta(long vrsta) {
-		this.vrsta = vrsta;
-	}
-
-	public long getStatus() {
-		return status;
-	}
-
-	public void setStatus(long status) {
-		this.status = status;
 	}
 
 	public long getId_korisnik() {
@@ -84,12 +57,28 @@ public class Info {
 		this.id_korisnik = id_korisnik;
 	}
 
-	public LocalDateTime getDatum() {
-		return datum;
+	public int getVrsta() {
+		return vrsta;
 	}
 
-	public void setDatum(LocalDateTime datum) {
-		this.datum = datum;
+	public void setVrsta(int vrsta) {
+		this.vrsta = vrsta;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public int getId_upravitelj() {
+		return id_upravitelj;
+	}
+
+	public void setId_upravitelj(int id_upravitelj) {
+		this.id_upravitelj = id_upravitelj;
 	}
 
 	public String getNaslov() {
@@ -108,20 +97,29 @@ public class Info {
 		this.poruka = poruka;
 	}
 
+	public LocalDateTime getDatum() {
+		return datum;
+	}
+
+	public void setDatum(LocalDateTime datum) {
+		this.datum = datum;
+	}
+
 	@Override
 	public String toString() {
-		return "Info [id_info=" + id_info + ", id_upravitelj=" + id_upravitelj + ", vrsta=" + vrsta + ", status="
-				+ status + ", id_korisnik=" + id_korisnik + ", datum=" + datum + ", naslov=" + naslov + ", poruka="
-				+ poruka + "]";
+		return "Info [id_info=" + id_info + ", id_korisnik=" + id_korisnik + ", vrsta=" + vrsta + ", status=" + status
+				+ ", id_upravitelj=" + id_upravitelj + ", naslov=" + naslov + ", poruka=" + poruka + ", datum=" + datum
+				+ "]";
 	}
-		public boolean equals(Object ob){  
-	        if(this==ob)          
-	             return true;  
-	        if(!(ob instanceof Grad))  
-	             return false;  
-	         //assume getter method in MyClass and this class has private variable myName, herName  
-	         return naslov.equals(((Info)ob).getId_info()) ;      
-	}
+
 	
+	public boolean equals(Object ob){  
+        if(this==ob)          
+             return true;  
+        if(!(ob instanceof Info))  
+             return false;  
+         //assume getter method in MyClass and this class has private variable myName, herName  
+         return naslov.equals(((Info)ob).getId_info()) ;      
+     } 
 	
 }

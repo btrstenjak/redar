@@ -1,45 +1,41 @@
 package hr.hrcity.eredar.model;
 
+import java.security.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.util.Date;
-
-
-
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "arhiva")
 public class Arhiva {
+
 	
+	
+	
+
 	@Id
-	@Column
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
-	private Date datum;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id_arhiva;
 	
-	
-
-    
-
 	@Column(nullable = false)
-    private String naziv;
-    
-    @Column(nullable = false)
-    private String putanja;
+    @NotEmpty
+	private String naziv;
+	
+	@Column(nullable = false)
+    @NotEmpty
+	private String putanja;
 
-	public Date getDatum() {
-		return datum;
+	public long getId_arhiva() {
+		return id_arhiva;
 	}
 
-	public void setDatum(Date datum) {
-		this.datum = datum;
+	public void setId_arhiva(long id_arhiva) {
+		this.id_arhiva = id_arhiva;
 	}
 
 	public String getNaziv() {
@@ -57,18 +53,19 @@ public class Arhiva {
 	public void setPutanja(String putanja) {
 		this.putanja = putanja;
 	}
-@Override
+
+	@Override
 	public String toString() {
-		return "Arhiva [datum=" + datum + ", naziv=" + naziv + ", putanja=" + putanja + "]";
+		return "Arhiva [id=" + id_arhiva + ", naziv=" + naziv + ", putanja=" + putanja + "]";
 	}
+	
 	public boolean equals(Object ob){  
         if(this==ob)          
              return true;  
-        if(!(ob instanceof Crna_lista))  
+        if(!(ob instanceof Arhiva))  
              return false;  
-
-         return naziv.equals(((Crna_lista)ob).getDatum()) ;     
-
-}
+         //assume getter method in MyClass and this class has private variable myName, herName  
+         return naziv.equals(((Arhiva)ob).getId_arhiva()) ;      
+     } 
 	
 }
