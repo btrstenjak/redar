@@ -17,7 +17,7 @@ public class Opcina {
 	private long id_opcina;
 	
 	@Column
-	private Integer id_upravitelj;
+	private long id_upravitelj;
 	
 	@Column(nullable = false)
     @NotEmpty
@@ -39,7 +39,7 @@ public class Opcina {
 		return id_upravitelj;
 	}
 
-	public void setId_upravitelj(Integer id_upravitelj) {
+	public void setId_upravitelj(long id_upravitelj) {
 		this.id_upravitelj = id_upravitelj;
 	}
 
