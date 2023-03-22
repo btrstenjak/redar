@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import hr.hrcity.eredar.model.Fakultet;
 
-public interface FakultetRepository extends JpaRepository<Fakultet, Long> {
+public interface FakultetRepository extends JpaRepository<Fakultet, Integer> {
 
 	
 	@Query(
