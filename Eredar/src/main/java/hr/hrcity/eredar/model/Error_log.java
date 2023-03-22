@@ -29,11 +29,11 @@ public class Error_log {
 		this.id_error = id_error;
 	}
 
-	public String getopis() {
+	public String getOpis() {
 		return opis;
 	}
 
-	public void setopis(String opis) {
+	public void setOpis(String opis) {
 		this.opis = opis;
 	}
 
