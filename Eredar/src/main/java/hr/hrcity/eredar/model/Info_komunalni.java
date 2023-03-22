@@ -19,7 +19,7 @@ public class Info_komunalni {
 	private long id_info;
 	
 	@Column
-	private long id_upravitelj;
+	private int id_upravitelj;
 	
 	@Column
 	private int id_zgrada;
@@ -62,13 +62,13 @@ public class Info_komunalni {
 
 
 
-	public long getId_upravitelj() {
+	public int getId_upravitelj() {
 		return id_upravitelj;
 	}
 
 
 
-	public void setId_upravitelj(long id_upravitelj) {
+	public void setId_upravitelj(int id_upravitelj) {
 		this.id_upravitelj = id_upravitelj;
 	}
 
