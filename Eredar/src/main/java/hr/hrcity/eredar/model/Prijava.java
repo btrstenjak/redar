@@ -273,14 +273,5 @@ public class Prijava {
 				+ naslov + ", odgovor=" + odgovor + ", proslijedena=" + proslijedena + ", vrsta_naziv=" + vrsta_naziv
 				+ ", zaprimljena=" + zaprimljena + ", zavrsena=" + zavrsena + "]";
 	}
-
-	
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Prijava))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return naslov.equals(((Prijava)ob).getId_prijava()) ;      
-     } 
+ 
 }
