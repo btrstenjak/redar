@@ -1,6 +1,7 @@
 package hr.hrcity.eredar.model;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -58,10 +59,10 @@ public class Pitanje {
 	private String odgovor;
 	
 	@Column
-	private LocalDateTime zaprimljena;
+	private Date zaprimljena;
 	
 	@Column
-	private LocalDateTime zavrsena;
+	private Date zavrsena;
 
 	public long getId_pitanje() {
 		return id_pitanje;
@@ -160,19 +161,19 @@ public class Pitanje {
 	}
 
 
-	public LocalDateTime getZaprimljena() {
+	public Date getZaprimljena() {
 		return zaprimljena;
 	}
 
-	public void setZaprimljena(LocalDateTime zaprimljena) {
+	public void setZaprimljena(Date zaprimljena) {
 		this.zaprimljena = zaprimljena;
 	}
 
-	public LocalDateTime getZavrsena() {
+	public Date getZavrsena() {
 		return zavrsena;
 	}
 
-	public void setZavrsena(LocalDateTime zavrsena) {
+	public void setZavrsena(Date zavrsena) {
 		this.zavrsena = zavrsena;
 	}
 
