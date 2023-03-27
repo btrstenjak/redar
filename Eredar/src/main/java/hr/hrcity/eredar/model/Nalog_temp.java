@@ -59,11 +59,6 @@ public class Nalog_temp {
 	}
 
 
-
-
-
-
-
 	public void setId_predlozak(long id_predlozak) {
 		this.id_predlozak = id_predlozak;
 	}
@@ -262,20 +257,6 @@ public class Nalog_temp {
 				+ "]";
 	}
 
-
-
-
-
-
-
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Nalog_temp))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return naslov.equals(((Nalog_temp)ob).getId_predlozak()) ;    
-}
 }
 
 	

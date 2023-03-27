@@ -1,6 +1,6 @@
 package hr.hrcity.eredar.model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -43,7 +43,9 @@ public class Skin {
 	private String slika;
 	
 	@Column
-	private LocalDateTime datum;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	private Date datum;
 
 	public long getId_skin() {
 		return id_skin;
@@ -101,11 +103,11 @@ public class Skin {
 		this.slika = slika;
 	}
 
-	public LocalDateTime getDatum() {
+	public Date getDatum() {
 		return datum;
 	}
 
-	public void setDatum(LocalDateTime datum) {
+	public void setDatum(Date datum) {
 		this.datum = datum;
 	}
 
@@ -116,13 +118,5 @@ public class Skin {
 				+ "]";
 	}
 
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Skin))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return rez.equals(((Skin)ob).getId_skin()) ;      
-     } 
 
 }

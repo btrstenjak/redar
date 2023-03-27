@@ -1,7 +1,7 @@
 package hr.hrcity.eredar.model;
 
-import java.time.LocalDateTime;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -64,14 +64,14 @@ public class Korisnici {
 	private String mac;
 	
 	@Column
-	private LocalDateTime aktivacija_datum;
+	private Date aktivacija_datum;
 	
 	
 	@Column
-	private LocalDateTime created_at;
+	private Date created_at;
 	
 	@Column
-	private LocalDateTime updated_at;
+	private Date updated_at;
 
 	public long getId_korisnik() {
 		return id_korisnik;
@@ -177,27 +177,27 @@ public class Korisnici {
 		this.mac = mac;
 	}
 
-	public LocalDateTime getAktivacija_datum() {
+	public Date getAktivacija_datum() {
 		return aktivacija_datum;
 	}
 
-	public void setAktivacija_datum(LocalDateTime aktivacija_datum) {
+	public void setAktivacija_datum(Date aktivacija_datum) {
 		this.aktivacija_datum = aktivacija_datum;
 	}
 
-	public LocalDateTime getCreated_at() {
+	public Date getCreated_at() {
 		return created_at;
 	}
 
-	public void setCreated_at(LocalDateTime created_at) {
+	public void setCreated_at(Date created_at) {
 		this.created_at = created_at;
 	}
 
-	public LocalDateTime getUpdated_at() {
+	public Date getUpdated_at() {
 		return updated_at;
 	}
 
-	public void setUpdated_at(LocalDateTime updated_at) {
+	public void setUpdated_at(Date updated_at) {
 		this.updated_at = updated_at;
 	}
 

@@ -64,13 +64,4 @@ public class Status_naloga {
 		return "Status_naloga [id_status_naloga=" + id_status_naloga + ", naziv_status=" + naziv_status + "]";
 	}
 
-
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Status_naloga))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return naziv_status.equals(((Status_naloga)ob).getId_status_naloga()) ;      
-     } 
 }

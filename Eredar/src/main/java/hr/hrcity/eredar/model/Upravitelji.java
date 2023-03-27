@@ -1,7 +1,6 @@
 package hr.hrcity.eredar.model;
 
-import java.time.LocalDateTime;
-
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -66,10 +65,14 @@ public class Upravitelji {
 	private String nazivGrada;
 	
 	@Column
-	private LocalDateTime licenca;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	private Date licenca;
 	
 	@Column
-	private LocalDateTime aktivacija_datum;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	private Date aktivacija_datum;
 	
 
 	public int getId_upravitelj() {
@@ -218,18 +221,18 @@ public class Upravitelji {
 
 
 
-	public LocalDateTime getLicenca() {
+	public Date getLicenca() {
 		return licenca;
 	}
 
-	public void setLicenca(LocalDateTime licenca) {
+	public void setLicenca(Date licenca) {
 		this.licenca = licenca;
 	}
 
 
 
 
-	public LocalDateTime getAktivacija_datum() {
+	public Date getAktivacija_datum() {
 		return aktivacija_datum;
 	}
 
@@ -239,7 +242,7 @@ public class Upravitelji {
 
 
 
-	public void setAktivacija_datum(LocalDateTime aktivacija_datum) {
+	public void setAktivacija_datum(Date aktivacija_datum) {
 		this.aktivacija_datum = aktivacija_datum;
 	}
 
@@ -255,13 +258,4 @@ public class Upravitelji {
 				+ ", licenca=" + licenca + ", aktivacija_datum=" + aktivacija_datum + "]";
 	}
 
-
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Upravitelji))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return ime_prezime.equals(((Upravitelji)ob).getId_upravitelj()) ;      
-     } 
 }

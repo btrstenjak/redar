@@ -104,14 +104,4 @@ public class Fakultet {
 	}
 
 
-
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Fakultet))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return naziv.equals(((Fakultet)ob).getId()) ;      
-     } 
-
 }

@@ -1,6 +1,6 @@
 package hr.hrcity.eredar.model;
 
-import java.security.Timestamp;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +21,9 @@ public class Crna_lista {
     private int razlog;
 	
 	@Column
-	private Timestamp datum;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	private Date datum;
 	
 	
 	@Column(nullable = false)
@@ -48,11 +50,11 @@ public class Crna_lista {
 		this.razlog = razlog;
 	}
 
-	public Timestamp getDatum() {
+	public Date getDatum() {
 		return datum;
 	}
 
-	public void setDatum(Timestamp datum) {
+	public void setDatum(Date datum) {
 		this.datum = datum;
 	}
 

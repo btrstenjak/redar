@@ -102,14 +102,5 @@ public class Opcina_lokacija {
 				+ ", kvota=" + kvota + ", naziv=" + naziv + ", email=" + email + "]";
 	}
 	
-
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Opcina_lokacija))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return naziv.equals(((Opcina_lokacija)ob).getId_opcina()) ;      
-     } 
 	
 }

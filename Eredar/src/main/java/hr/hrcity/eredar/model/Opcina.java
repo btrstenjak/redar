@@ -76,13 +76,4 @@ public class Opcina {
 				+ ", zupanija=" + zupanija + "]";
 	}
 	
-
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Opcina))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return naziv_opcine.equals(((Opcina)ob).getId_opcina()) ;      
-     } 
 }

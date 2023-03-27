@@ -1,6 +1,6 @@
 package hr.hrcity.eredar.model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,7 +39,9 @@ public class Info {
 	private String poruka;
 	
 	@Column
-	private LocalDateTime datum;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	private Date datum;
 
 	public long getId_info() {
 		return id_info;
@@ -97,11 +99,11 @@ public class Info {
 		this.poruka = poruka;
 	}
 
-	public LocalDateTime getDatum() {
+	public Date getDatum() {
 		return datum;
 	}
 
-	public void setDatum(LocalDateTime datum) {
+	public void setDatum(Date datum) {
 		this.datum = datum;
 	}
 
@@ -113,13 +115,6 @@ public class Info {
 	}
 
 	
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Info))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return naslov.equals(((Info)ob).getId_info()) ;      
-     } 
+
 	
 }

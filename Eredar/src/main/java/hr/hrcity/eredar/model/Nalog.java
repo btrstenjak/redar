@@ -1,7 +1,7 @@
 package hr.hrcity.eredar.model;
 
-import java.time.LocalDateTime;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -75,14 +75,20 @@ public class Nalog {
 	
 	
 	@Column
-	private LocalDateTime datum_slanja;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	private Date datum_slanja;
 	
 	
 	@Column
-	private LocalDateTime datum_naloga;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	private Date datum_naloga;
 	
 	@Column
-	private LocalDateTime datum_zatvaranja;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	private Date datum_zatvaranja;
 
 	
 	
@@ -269,38 +275,38 @@ public class Nalog {
 	
 
 
-	public LocalDateTime getDatum_slanja() {
+	public Date getDatum_slanja() {
 		return datum_slanja;
 	}
 
 
 
-	public void setDatum_slanja(LocalDateTime datum_slanja) {
+	public void setDatum_slanja(Date datum_slanja) {
 		this.datum_slanja = datum_slanja;
 	}
 
 
 
 
-	public LocalDateTime getDatum_naloga() {
+	public Date getDatum_naloga() {
 		return datum_naloga;
 	}
 
 
 
-	public void setDatum_naloga(LocalDateTime datum_naloga) {
+	public void setDatum_naloga(Date datum_naloga) {
 		this.datum_naloga = datum_naloga;
 	}
 
 
 
-	public LocalDateTime getDatum_zatvaranja() {
+	public Date getDatum_zatvaranja() {
 		return datum_zatvaranja;
 	}
 
 
 
-	public void setDatum_zatvaranja(LocalDateTime datum_zatvaranja) {
+	public void setDatum_zatvaranja(Date datum_zatvaranja) {
 		this.datum_zatvaranja = datum_zatvaranja;
 	}
 
@@ -318,16 +324,6 @@ public class Nalog {
 				+ datum_naloga + ", datum_zatvaranja=" + datum_zatvaranja + "]";
 	}
 
-
-
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Nalog))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return naslov.equals(((Nalog)ob).getId_nalog()) ;      
-     } 
 	
 	
 }

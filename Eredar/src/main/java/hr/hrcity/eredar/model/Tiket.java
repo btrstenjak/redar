@@ -266,14 +266,4 @@ public class Tiket {
 				+ ", pitanje=" + pitanje + ", odgovor=" + odgovor + "]";
 	}
 
-
-
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Tiket))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return pitanje.equals(((Tiket)ob).getId_tiket()) ;      
-     } 
 }

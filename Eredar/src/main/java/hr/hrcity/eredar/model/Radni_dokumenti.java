@@ -1,7 +1,5 @@
 package hr.hrcity.eredar.model;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import java.util.Date;
+
 
 @Entity
 @Table(name = "radni_dokumenti")
@@ -71,7 +71,9 @@ public class Radni_dokumenti {
 	
 	
 	@Column
-	private LocalDateTime datum_sluzbeno;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	private Date datum_sluzbeno;
 
 
 	public long getId_radni_dokument() {
@@ -214,12 +216,12 @@ public class Radni_dokumenti {
 	}
 
 
-	public LocalDateTime getDatum_sluzbeno() {
+	public Date getDatum_sluzbeno() {
 		return datum_sluzbeno;
 	}
 
 
-	public void setDatum_sluzbeno(LocalDateTime datum_sluzbeno) {
+	public void setDatum_sluzbeno(Date datum_sluzbeno) {
 		this.datum_sluzbeno = datum_sluzbeno;
 	}
 

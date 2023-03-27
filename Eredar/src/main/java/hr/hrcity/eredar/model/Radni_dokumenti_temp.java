@@ -176,12 +176,4 @@ public class Radni_dokumenti_temp {
 				+ ", URB=" + URB + ", naziv_predloska=" + naziv_predloska + ", osoba=" + osoba + "]";
 	}
 
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Radni_dokumenti_temp))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return naziv_predloska.equals(((Radni_dokumenti_temp)ob).getId_predlozak()) ;      
-     } 
 }

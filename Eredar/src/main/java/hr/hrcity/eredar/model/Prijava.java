@@ -1,6 +1,6 @@
 package hr.hrcity.eredar.model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -46,8 +46,6 @@ public class Prijava {
 	private String longitude;
 	
 	
-	
-
 	@Column(nullable = false)
     @NotEmpty
 	private String slika;
@@ -90,10 +88,14 @@ public class Prijava {
 	private String vrsta_naziv;
 	
 	@Column
-	private LocalDateTime zaprimljena;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	private Date zaprimljena;
 	
 	@Column
-	private LocalDateTime zavrsena;
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	private Date zavrsena;
 
 	public long getId_prijava() {
 		return id_prijava;
@@ -247,19 +249,19 @@ public class Prijava {
 		this.vrsta_naziv = vrsta_naziv;
 	}
 
-	public LocalDateTime getZaprimljena() {
+	public Date getZaprimljena() {
 		return zaprimljena;
 	}
 
-	public void setZaprimljena(LocalDateTime zaprimljena) {
+	public void setZaprimljena(Date zaprimljena) {
 		this.zaprimljena = zaprimljena;
 	}
 
-	public LocalDateTime getZavrsena() {
+	public Date getZavrsena() {
 		return zavrsena;
 	}
 
-	public void setZavrsena(LocalDateTime zavrsena) {
+	public void setZavrsena(Date zavrsena) {
 		this.zavrsena = zavrsena;
 	}
 

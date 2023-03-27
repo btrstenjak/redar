@@ -1,8 +1,7 @@
 package hr.hrcity.eredar.model;
 
-import java.time.LocalDateTime;
-import java.util.Date;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -59,9 +58,13 @@ public class Pitanje {
 	private String odgovor;
 	
 	@Column
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
 	private Date zaprimljena;
 	
 	@Column
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
 	private Date zavrsena;
 
 	public long getId_pitanje() {
@@ -185,14 +188,6 @@ public class Pitanje {
 				+ ", napomena=" + napomena + ", naslov=" + naslov + ", odgovor=" + odgovor + ", zaprimljena=" + zaprimljena + ", zavrsena=" + zavrsena + "]";
 	}
 	
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Pitanje))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return naslov.equals(((Pitanje)ob).getId_pitanje()) ;      
-     } 
 }
 
 

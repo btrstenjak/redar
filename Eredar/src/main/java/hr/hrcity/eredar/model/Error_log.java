@@ -42,12 +42,5 @@ public class Error_log {
 		return "Error_log [id_error=" + id_error + ", opis=" + opis + "]";
 	}
 	 
-	public boolean equals(Object ob){  
-        if(this==ob)          
-             return true;  
-        if(!(ob instanceof Error_log))  
-             return false;  
-         //assume getter method in MyClass and this class has private variable myName, herName  
-         return opis.equals(((Error_log)ob).getId_error()) ;      
-     } 
+          
 }
