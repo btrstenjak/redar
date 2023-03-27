@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-@Table(name = "vrste_dokumenta")
+@Table(name = "vrste_dokumenata")
 public class Vrste_dokumenata {
 
 	
