@@ -20,9 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import hr.hrcity.eredar.model.Pitanje;
 import hr.hrcity.eredar.service.PitanjeService;
-import hr.hrcity.models.Info_mob;
-import hr.hrcity.models.Pitanja;
-import hr.hrcity.models.User;
 
 @RestController
 @RequestMapping("pitanja")
