@@ -13,7 +13,7 @@ import hr.hrcity.eredar.model.Crna_lista;
 public interface Crna_listaRepository extends JpaRepository<Crna_lista, Integer> {
 
 	@Query(
-			  value = "SELECT *  FROM crna_lista u ORDER BY u.naziv", 
+			  value = "SELECT *  FROM crna_lista u ORDER BY u.email", 
 			  nativeQuery = true)
 	
 	Collection<Crna_lista> findAllEntity();
