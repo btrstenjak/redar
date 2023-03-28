@@ -14,7 +14,7 @@ public interface Error_logRepository extends JpaRepository<Error_log, Long> {
 
 	
 	@Query(
-			  value = "SELECT *  FROM error_log u ORDER BY u.opis", 
+			  value = "SELECT *  FROM error_log u ORDER BY u.id_error", 
 			  nativeQuery = true)
 	Collection<Error_log> findAllEntity();
 	

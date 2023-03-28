@@ -62,7 +62,7 @@ public class Info_komunalni {
 
 
 
-	public void setid_info(long id_info) {
+	public void setId_info(long id_info) {
 		this.id_info = id_info;
 	}
 
