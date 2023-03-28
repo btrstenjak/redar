@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import hr.hrcity.eredar.model.Info;
 public interface InfoRepository extends JpaRepository<Info, Long>{
 	@Query(
-			  value = "SELECT *  FROM info u ORDER BY u.naziv", 
+			  value = "SELECT *  FROM info u ORDER BY u.naslov", 
 			  nativeQuery = true)
 	Collection<Info> findAllEntity();
 
