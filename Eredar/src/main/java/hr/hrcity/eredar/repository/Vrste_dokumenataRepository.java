@@ -10,7 +10,7 @@ import hr.hrcity.eredar.model.Vrste_dokumenata;
 public interface Vrste_dokumenataRepository extends JpaRepository<Vrste_dokumenata, Long> {
 
 	@Query(
-			  value = "SELECT *  FROM vrste_dokumenata u ORDER BY u.naziv", 
+			  value = "SELECT *  FROM vrste_dokumenata u ORDER BY u.naziv_dokumenta", 
 			  nativeQuery = true)
 	Collection<Vrste_dokumenata> findAllEntity();
 }

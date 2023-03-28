@@ -10,7 +10,7 @@ import hr.hrcity.eredar.model.Upravitelji;
 
 public interface UpraviteljiRepository extends JpaRepository<Upravitelji, Integer>{
 	@Query(
-			  value = "SELECT *  FROM upravitelj u ORDER BY u.ime_prezime", 
+			  value = "SELECT *  FROM upravitelji u ORDER BY u.ime_prezime", 
 			  nativeQuery = true)
 	Collection<Upravitelji> findAllEntity();
 }

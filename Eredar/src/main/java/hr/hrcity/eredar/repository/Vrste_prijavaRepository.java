@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import hr.hrcity.eredar.model.Vrste_prijava;
 public interface Vrste_prijavaRepository extends JpaRepository<Vrste_prijava, Integer>{
 	@Query(
-			  value = "SELECT *  FROM vrste_prijave u ORDER BY u.naziv_vrste", 
+			  value = "SELECT *  FROM vrste_prijava u ORDER BY u.naziv_vrste", 
 			  nativeQuery = true)
 	Collection<Vrste_prijava> findAllEntity();
 	
