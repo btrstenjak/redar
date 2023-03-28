@@ -18,35 +18,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import hr.hrcity.eredar.model.Nalog_temp;
-import hr.hrcity.eredar.service.Nalog_tempService;
+import hr.hrcity.eredar.model.Opcina_lokacija;
+import hr.hrcity.eredar.service.Opcina_lokacijaService;
 
 @RestController
-@RequestMapping("nalog_temp")
-public class Nalog_tempController {
+@RequestMapping("opcina_lokacija")
+public class Opcina_lokacijaController {
 
 	DateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
 
 	@Autowired
-	private Nalog_tempService entityService;
+	private Opcina_lokacijaService entityService;
 
 	@GetMapping("/")
-	public ResponseEntity<Iterable<Nalog_temp>> getAllEntities(HttpSession request) {
+	public ResponseEntity<Iterable<Opcina_lokacija>> getAllEntities(HttpSession request) {
 		return ResponseEntity.ok().body(this.entityService.getAllEntity());
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Nalog_temp> getEntityById(@PathVariable long id) {
-		Nalog_temp nalog_temp = this.entityService.getEntityById(id);
-		if (nalog_temp != null) {
-			this.entityService.updateEntity(nalog_temp);
+	public ResponseEntity<Opcina_lokacija> getEntityById(@PathVariable long id) {
+		Opcina_lokacija opcina_lokacija = this.entityService.getEntityById(id);
+		if (opcina_lokacija != null) {
+			this.entityService.updateEntity(opcina_lokacija);
 		}
 
-		return ResponseEntity.ok().body(nalog_temp);
+		return ResponseEntity.ok().body(opcina_lokacija);
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<String> createEntity(HttpSession request, @RequestBody Nalog_temp entityData) {
+	public ResponseEntity<String> createEntity(HttpSession request, @RequestBody Opcina_lokacija entityData) {
 
 		this.entityService.createEntity(entityData);
 		return ResponseEntity.ok().body("Ispravan upis podatka");
@@ -55,9 +55,9 @@ public class Nalog_tempController {
 	
 	
 	@PutMapping("/")
-	public ResponseEntity<String> updateEntity(HttpSession request, @RequestBody Nalog_temp entityData) {
+	public ResponseEntity<String> updateEntity(HttpSession request, @RequestBody Opcina_lokacija entityData) {
 
-		if (entityData.getNaslov() == null || entityData.getNaslov().isEmpty()) {
+		if (entityData.getNaziv() == null || entityData.getNaziv().isEmpty()) {
 			return ResponseEntity.status(601).body("Popunite sva polja.");
 		} else
 			try {
@@ -77,10 +77,10 @@ public class Nalog_tempController {
 	@PostMapping("/test")
 	public ResponseEntity<String> createEntityTest(HttpSession request) {
 
-		Nalog_temp entityData = new Nalog_temp();
+		Opcina_lokacija entityData = new Opcina_lokacija();
 		
-		entityData.setId_predlozak(1342);
-		entityData.setNaslov("1");
+		entityData.setId_opcina(1342);
+		entityData.setNaziv("1");
 		entityData.setEmail("2");
 		
 		

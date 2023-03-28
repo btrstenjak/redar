@@ -9,7 +9,7 @@ import hr.hrcity.eredar.model.Opcina;
 
 public interface OpcinaRepository extends JpaRepository<Opcina, Long>{
 	@Query(
-			  value = "SELECT *  FROM opcia u ORDER BY u.naziv_opcine", 
+			  value = "SELECT *  FROM opcina u ORDER BY u.naziv_opcine", 
 			  nativeQuery = true)
 	Collection<Opcina> findAllEntity();
 

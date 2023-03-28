@@ -1,13 +1,10 @@
 package hr.hrcity.eredar.service;
 
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Optional;
 
-import javax.persistence.EntityManager;
+
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -79,46 +76,6 @@ public class OpcinaServiceImpl implements OpcinaService {
 		}
 
 	}
-
-	
-	/*
-	// API
-	@Override
-	public ArrayList<Opcina> getAllEntityMob() {
-		return (ArrayList<Opcina>) this.dataRepository.findAllEntity();
-	}
-
-	@Override
-	public ArrayList<Opcina> findListOpcinaUpravitelj() {
-		EntityManager em = emf.createEntityManager();
-		em.getTransaction().begin();
-
-		Query query = em.createNativeQuery("" + "Select o.id_opcina, o.naziv_opcine, o.zupanija, o.id_upravitelj "
-				+ " FROM (opcina o INNER JOIN upravitelj u ON o.id_Opcina = u.id_Opcina)  " + " GROUP BY o.id_Opcina "
-				+ "   ORDER BY o.naziv ");
-
-		ArrayList<Opcina> listaOL = new ArrayList<Opcina>();
-
-		@SuppressWarnings("unchecked")
-		List<Object[]> results = query.getResultList();
-		for (Object[] objects : results) {
-
-			Opcina O = new Opcina();
-			O.setId_opcina(((BigInteger) objects[0]).longValue()); // id Opcina
-			O.setNaziv_opcine((String) objects[1]); // naziv Opcinaa
-			O.setZupanija((String) objects[2]); // županija
-			O.setId_upravitelj(((BigInteger) objects[3]).longValue()); // id upravitelja
-			listaOL.add(O);
-		}
-
-		em.getTransaction().commit();
-		em.close();
-
-
-
-		return listaOL;
-	}*/
- 
 }
 
 
