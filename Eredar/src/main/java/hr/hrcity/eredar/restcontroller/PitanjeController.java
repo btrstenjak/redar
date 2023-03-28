@@ -60,6 +60,8 @@ public class PitanjeController {
 		return ResponseEntity.ok().body("Ispravan upis podatka");
 	}
 
+	
+	
 	@PutMapping("/")
 	public ResponseEntity<String> updateEntity(HttpSession request, @RequestBody Pitanje entityData) {
 
@@ -87,12 +89,27 @@ public class PitanjeController {
 	public ResponseEntity<String> createEntityTest(HttpSession request) {
 
 		Pitanje entityData = new Pitanje();
-		// ispuniti podatke u objektu
-		entityData.setId_grad(40000);
-		// ....
-		Date danas = new Date();
-		entityData.setZaprimljena(danas);
+		
+		entityData.setId_pitanje(1342);
+		entityData.setId_grad(1);
+		entityData.setId_korisnik(2);
+		entityData.setId_upravitelj(3);
+		entityData.setId_status_prijave(4);
+		entityData.setId_zaposlenika(5);
+		entityData.setVidljivost(1);
+		entityData.setAdresa("Example Street 123");
+		entityData.setNaziv_grad("Example City");
+		entityData.setNapomena("This is an example question.");
+		entityData.setNaslov("Example Question");
+		entityData.setOdgovor("This is an example answer.");
+		entityData.setZaprimljena(new Date());
+		entityData.setZavrsena(null);
+		
+		
 		this.entityService.createEntity(entityData);
 		return ResponseEntity.ok().body("Ispravan upis podatka");
+		
+	
+
 	}
 }
